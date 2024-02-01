@@ -1,4 +1,4 @@
-# Frontend part of my personal blog site coded in MERN stack.
+# Frontend part of my personal blog site coded in MERN
 #### Used Vite to create my project which also handles many things on behalf of me.
 #### React is uses as the framework.
 #### Tailwind CSS is used.
