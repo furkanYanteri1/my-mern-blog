@@ -1,5 +1,18 @@
-# React + Vite
+# Frontend part of my personal blog site coded in MERN stack.
+#### Used Vite to create my project which also handles many things on behalf of me.
+#### React is uses as the framework.
+#### Tailwind CSS is used.
+--- 
+### How to run
+- Install node and npm (skip if you already have)
+  - https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+- Fetch the repo or the code only, open the folder in a terminal
+- npm i 
+- run `npm run dev`
 
+
+
+---
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
