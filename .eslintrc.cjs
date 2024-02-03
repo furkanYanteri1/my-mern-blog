@@ -16,5 +16,13 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/self-closing-comp': 'error',
+    'no-multiple-empty-lines': ['error', { max: 1 }],
+    'eqeqeq': 'error',
+    'no-var': 'error',
+    'prefer-const': 'error',
+    'no-unused-vars': 'error',
+    'react/jsx-uses-react': 'error',
+    'react/jsx-uses-vars': 'error',
   },
 }
