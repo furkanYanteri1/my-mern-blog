@@ -24,5 +24,13 @@ module.exports = {
     'no-unused-vars': 'error',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
+    'react/jsx-sort-props': ['error', {
+      ignoreCase: true,
+      callbacksLast: true,
+      shorthandFirst: true,
+      shorthandLast: false,
+      noSortAlphabetically: false,
+      reservedFirst: true,
+    }],
   },
 }
