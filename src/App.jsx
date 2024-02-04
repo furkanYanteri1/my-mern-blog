@@ -8,18 +8,18 @@ import SignUp from './tabs/SignUp'
 import Header from './components/Header'
 
 export default function main() {
-  return (
-   <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/dashboard' element={<Dashboard />} />
-      <Route path='/projects' element={<Projects />} />
-      <Route path='/sign-in' element={<SignIn />} />
-      <Route path='/sign-up' element={<SignUp />} />
+   return (
+      <BrowserRouter>
+         <Header />
+         <Routes>
+            <Route element={<Home />} path='/' />
+            <Route element={<About />} path='/about' />
+            <Route element={<Dashboard />} path='/dashboard' />
+            <Route element={<Projects />} path='/projects' />
+            <Route element={<SignIn />} path='/sign-in' />
+            <Route element={<SignUp />} path='/sign-up' />
       
-    </Routes>
-   </BrowserRouter>
-  )
+         </Routes>
+      </BrowserRouter>
+   )
 }
