@@ -10,8 +10,8 @@ export default function Header() {
    return (
       <Navbar className='border-b-2 bg-gradient-to-r from-purple-200 to-blue-200' >
          <Link className='self-center whitespace-nowrap text-sm sm:text-lg lg:text-2xl font-semibold dark:text-white' to="/">
-            <span className='py-1 px-2 bg-gradient-to-r from-cyan-600 to-indigo-500 rounded-lg text-white'>Furkan&apos;s</span>
-            Blog
+            <span className='py-1 px-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-lg text-white'>FurkanYanteri1</span>
+            <span className='bg-gradient-to-r text-transparent from-purple-400 to-blue-400 bg-clip-text'>Blog</span>
          </Link>
         
          <form>
@@ -28,10 +28,10 @@ export default function Header() {
 
          <div className='flex gap-2 md:order-2'>
             <Button pill className='bg-gray-100'>
-               <FaMoon color='white'/>
+               <FaMoon color='black'/>
             </Button>
             <Link to='/sign-in'>
-               <Button gradientDuoTone='purpleToBlue'>
+               <Button outline gradientDuoTone='purpleToBlue'>
                   Sing In
                </Button>
             </Link>
