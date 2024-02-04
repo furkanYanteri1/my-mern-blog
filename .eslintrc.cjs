@@ -32,5 +32,8 @@ module.exports = {
       noSortAlphabetically: false,
       reservedFirst: true,
     }],
+    'indent': ['error', 3],
+    'react/jsx-indent': ['error', 3],
+    'react/jsx-indent-props': ['error', 3],
   },
 }
