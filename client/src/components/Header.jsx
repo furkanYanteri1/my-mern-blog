@@ -7,7 +7,7 @@ import profilePicture from '../../public/fy-icon.png'
 
 export default function Header() {
    const path = useLocation().pathname
-
+   
    return (
       <Navbar className='border-b-2 bg-gradient-to-r from-purple-200 to-blue-200' >
          <Link className='self-center whitespace-nowrap text-sm sm:text-lg lg:text-2xl font-semibold dark:text-white' to="/">

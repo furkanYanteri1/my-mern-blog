@@ -6,13 +6,15 @@
   "main": "index.js",
   "scripts": {
     "serve-dev": "nodemon api/index.js",
-    "serve-prod":"node api/index.js"
+    "serve-prod": "node api/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.1",
     "express": "^4.18.2",
+    "mongoose": "^8.1.1",
     "nodemon": "^3.0.3"
   }
 }
