@@ -12,8 +12,8 @@ export default function Header() {
       <Navbar className='border-b-2 bg-gradient-to-r from-purple-200 to-blue-200' >
          <Link className='self-center whitespace-nowrap text-sm sm:text-lg lg:text-2xl font-semibold dark:text-white' to="/">
             <div className='flex items-center gap-0'>
-               <span className='py-1 px-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-lg text-white'>FurkanYanteri1</span>
-               <span className='py-1'>
+               <span className='hidden sm:inline py-1 px-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-lg text-white'>FurkanYanteri1</span>
+               <span className='py-1 inline sm:hidden'>
                   <img alt='Profile' className='w-8 h-8 rounded-md' src={profilePicture} />
                </span>
                <span className='bg-gradient-to-r text-transparent from-purple-400 to-blue-400 bg-clip-text'>Blog</span>
