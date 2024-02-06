@@ -9,6 +9,7 @@
 - Fetch the repo or the code only, open the folder in a terminal
 - npm i 
 - run `npm run dev`
+- make sure that you are using node v18 or highers
 
 
 
