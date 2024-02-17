@@ -8,8 +8,14 @@
   - https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 - Fetch the repo or the code only, open the folder in a terminal
 - npm i 
-- run `npm run dev`
+- run `npm run dev` for client
+- run `npm run serve-dev`for server
 - make sure that you are using node v18 or highers
+
+
+
+### Dev notes
+- first test API localhost:3000/api/user/test
 
 
 
