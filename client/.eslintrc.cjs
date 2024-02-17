@@ -35,5 +35,6 @@ module.exports = {
     'indent': ['error', 3],
     'react/jsx-indent': ['error', 3],
     'react/jsx-indent-props': ['error', 3],
+    'object-property-newline': 'error',
   },
 }
