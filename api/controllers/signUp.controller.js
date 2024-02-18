@@ -1,12 +1,13 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
+import {errorCreator} from "../utils/error.js";
 
-export default async function signUp (req, res) {
+export default async function signUp (req, res, next) {
     
     const { name, email, password } = req.body;
 
     if (!name || !email || !password || name === "" || email === "" || password === "") {
-      return res.status(400).send("Missing required fields");
+        return next(errorCreator(400, "All fields are required"));
     }
 
     const hashedPassword = bcrypt.hashSync(password, 10);
@@ -16,7 +17,7 @@ export default async function signUp (req, res) {
         await newUser.save();
         await res.status(200).send("User created successfully");
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
     
 }
