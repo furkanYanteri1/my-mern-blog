@@ -1,4 +1,4 @@
-# Frontend part of my personal blog site coded in MERN
+# My personal blog site coded in MERN
 #### Used Vite to create my project which also handles many things on behalf of me.
 #### React is uses as the framework.
 #### Tailwind CSS is used.
@@ -16,6 +16,12 @@
 
 ### Dev notes
 - first test API localhost:3000/api/user/test
+
+### TODO:
+- Quote sharing
+- Every visitors will be promoted to leave a quote or a message
+- All the quotes will be stored and will be shown to the visitors randomly
+- Language check to be implemented with: https://pypi.org/project/profanity-check/
 
 
 
