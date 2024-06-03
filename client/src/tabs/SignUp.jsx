@@ -40,14 +40,14 @@ export default function SignUp() {
                      <TextInput  
                         id='email '
                         placeholder='name@xyz.com'
-                        type='text'/>
+                        type='email'/>
                   </div>
                   <div>
                      <Label value='Your password:' />
                      <TextInput  
                         id='password '
                         placeholder='password'
-                        type='text'/>
+                        type='password'/>
                   </div>
                   <Button className='bg-gradient-to-r from-teal-300 to-green-400' >
                      Sign Up 
