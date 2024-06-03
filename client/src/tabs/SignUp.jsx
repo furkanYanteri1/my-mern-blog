@@ -1,9 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import profilePicture from '../../public/fy-icon.png'
-import { Button, Label, TextInput} from 'flowbite-react'
+import { Button, Label, TextInput } from 'flowbite-react'
 
 export default function SignUp() {
+   const [formData, setFormData] = useState({})
+   const handleChange = (e) => {
+      setFormData({...formData,
+         [e.target.id]: e.target.value})
+   }
+   const handleSubmit = async (e) => {
+      e.preventDefault()
+      try {
+         const res = await fetch('/api/auth/signup', {
+            method: 'POST',
+            headers: {
+               'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+         })
+         const data = await res.json()
+      } catch (error) {
+         console.log(error)
+      }
+   }
    return (
       <div className='min-h-screen min-w-screen mt-5 md:mt-20'>
 
@@ -27,30 +47,32 @@ export default function SignUp() {
 
             {/* right div */}
             <div className='flex-1'>
-               <form className='flex flex-col gap-4'>
+               <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
                   <div className='mt-5 md:mt-0'>
                      <Label value='Your username:' />
-                     <TextInput  
-                        id='username '
+                     <TextInput
+                        id='name'
                         placeholder='username'
-                        type='text'/>
+                        type='text' onChange={handleChange} />
                   </div>
                   <div>
                      <Label value='Your email:' />
-                     <TextInput  
-                        id='email '
+                     <TextInput
+                        id='email'
                         placeholder='name@xyz.com'
-                        type='email'/>
+                        type='email' onChange={handleChange} />
                   </div>
                   <div>
                      <Label value='Your password:' />
-                     <TextInput  
-                        id='password '
+                     <TextInput
+                        id='password'
                         placeholder='password'
-                        type='password'/>
+                        type='password' onChange={handleChange} 
+                        
+                     />
                   </div>
-                  <Button className='bg-gradient-to-r from-teal-300 to-green-400' >
-                     Sign Up 
+                  <Button className='bg-gradient-to-r from-teal-300 to-green-400' type='submit' >
+                     Sign Up
                   </Button>
                   <div className='flex flex-row justify-between'>
                      <div className='flex-gap-2 text-xs mt-5 text-gray-500'>
