@@ -105,7 +105,7 @@ export default function SignUp() {
                   <div className='flex flex-row justify-between'>
                      <div className='flex-gap-2 text-xs mt-5 text-gray-500'>
                         <span>Have an account?</span>
-                        <Link to='/sign-in'>
+                        <Link to='/signin'>
                            <Button outline gradientDuoTone='purpleToBlue'>
                               Sing In
                            </Button>

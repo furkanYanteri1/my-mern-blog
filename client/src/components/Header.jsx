@@ -36,7 +36,7 @@ export default function Header() {
             <Button pill className='bg-gray-100'>
                <FaMoon color='black'/>
             </Button>
-            <Link to='/sign-in'>
+            <Link to='/signin'>
                <Button outline gradientDuoTone='purpleToBlue'>
                   Sing In
                </Button>
