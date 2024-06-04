@@ -1,17 +1,31 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import profilePicture from '../../public/fy-icon.png'
-import { Button, Label, TextInput } from 'flowbite-react'
+import { Alert, Button, Label, Spinner, TextInput } from 'flowbite-react'
 
 export default function SignUp() {
    const [formData, setFormData] = useState({})
+   const [errorMessage, setErrorMessage] = useState(null)
+   const [loading, setloading] = useState(false)
+   const nav = useNavigate()
    const handleChange = (e) => {
       setFormData({...formData,
-         [e.target.id]: e.target.value})
+         [e.target.id]: e.target.value.trim()})
+      if(Object.values(formData).every(
+         (value) => value !== null && value !== ''
+      )){
+         setErrorMessage(null)
+      }
    }
    const handleSubmit = async (e) => {
       e.preventDefault()
+      if(!formData.name ||!formData.email ||!formData.password) {
+         setErrorMessage('All fields are required')
+         return
+      }
       try {
+         setloading(true)
+         setErrorMessage(null)
          const res = await fetch('/api/auth/signup', {
             method: 'POST',
             headers: {
@@ -20,8 +34,19 @@ export default function SignUp() {
             body: JSON.stringify(formData)
          })
          const data = await res.json()
+         if (data.success === false) {
+            setErrorMessage(data.message)
+         } else {
+            setErrorMessage(null)
+            setFormData({})
+         }
+         setloading(false)
+         if (res.ok) {
+            nav('/signin')
+         }
       } catch (error) {
          console.log(error)
+         setloading(false) 
       }
    }
    return (
@@ -71,13 +96,20 @@ export default function SignUp() {
                         
                      />
                   </div>
-                  <Button className='bg-gradient-to-r from-teal-300 to-green-400' type='submit' >
-                     Sign Up
+                  <Button className='bg-gradient-to-r from-teal-300 to-green-400' disabled={loading} type='submit' >
+                     {
+                        loading? (
+                           <>
+                              <Spinner size='sm' />
+                              <span className='ml-3'>Loading</span>
+                           </>
+                        ) : 'Sign Up'
+                     }
                   </Button>
                   <div className='flex flex-row justify-between'>
                      <div className='flex-gap-2 text-xs mt-5 text-gray-500'>
                         <span>Have an account?</span>
-                        <Link to='/sign-in'>
+                        <Link to='/signin'>
                            <Button outline gradientDuoTone='purpleToBlue'>
                               Sing In
                            </Button>
@@ -90,6 +122,11 @@ export default function SignUp() {
                         </Button>
                      </div>
                   </div>
+                  {errorMessage && (
+                     <Alert className='mt-1' color='red'>
+                        {errorMessage}
+                     </Alert>
+                  )}
                </form>
             </div>
 

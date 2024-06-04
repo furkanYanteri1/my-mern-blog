@@ -15,7 +15,10 @@ export default async function signUp (req, res, next) {
 
     try {
         await newUser.save();
-        await res.status(200).send("User created successfully");
+        await res.status(200).json({
+            success: true,
+            message: "User created successfully",
+        });
     } catch (error) {
         next(error);
     }

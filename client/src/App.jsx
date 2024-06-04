@@ -16,8 +16,8 @@ export default function main() {
             <Route element={<About />} path='/about' />
             <Route element={<Dashboard />} path='/dashboard' />
             <Route element={<Projects />} path='/projects' />
-            <Route element={<SignIn />} path='/sign-in' />
-            <Route element={<SignUp />} path='/sign-up' />
+            <Route element={<SignIn />} path='/signin' />
+            <Route element={<SignUp />} path='/signup' />
       
          </Routes>
       </BrowserRouter>
